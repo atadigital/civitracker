@@ -1,0 +1,13 @@
+;$Id: civitracker.module,v 2.0 2013/11/08 09:50:24 shanecory, davidkeene Exp $
+ 
+name = Civi Source Tracker
+description = Allows tracking of online campaigns with CiviCRM. You must create the fields in CiviCRM as custom fields, then ensure the module file is referencing the correct custom_XX (number of the custom field. More info <a href="http://wiki.civicrm.org/confluence/display/CRMDOC/Update+custom+fields+in+contributions+and+events+by+passing+variables+in+a+URL">HERE</a>. 
+dependencies[] = civicrm
+package = CiviCRM
+core = 7.x
+
+; Information added by drupal.org packaging script on 2009-01-13
+version = "2.0"
+core = "7.x"
+project = "civitracker"
+datestamp = "1231866019"

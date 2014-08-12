@@ -1,0 +1,22 @@
+<?php
+// $Id: civitracker.module,v 2.0 2013/11/08 09:50:24 shanecory, davidkeene Exp $
+
+function civitracker_civicrm_buildForm( $formName, &$form ) {
+  // enable tracking feature
+  if ( ( $formName == 'CRM_Contribute_Form_Contribution_Main' ||
+      $formName == 'CRM_Contribute_Form_Contribution_Confirm' ||
+      $formName == 'CRM_Contribute_Form_Contribution_ThankYou' ||
+      $formName == 'CRM_Event_Form_Registration_Register' ||
+      $formName == 'CRM_Event_Form_Registration_Confirm' ||
+      $formName == 'CRM_Event_Form_Registration_ThankYou' ) &&
+    $form->getVar( '_id' ) >= 1 ) { // use  CONTRIBUTION PAGE ID here, or have >= 1 for all
+
+    //Machine Name = URL Param for custom fields
+    $defaults[custom_1] = $_GET['custom_1'];
+    $defaults[custom_2] = $_GET['custom_2'];
+
+
+    $form->setDefaults($defaults);
+
+  }
+}
